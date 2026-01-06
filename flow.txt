@@ -1,0 +1,43 @@
+START
+│
+├── Program starts
+│
+├── Ask user to enter the folder path
+│
+├── Check if the folder exists
+│     ├── If NOT exists → show error and exit
+│     └── If exists → continue
+│
+├── Read all items inside the folder
+│
+├── For each item in the folder:
+│     ├── Check if item is a file
+│     │     ├── If it is a folder → skip
+│     │     └── If it is a file → continue
+│     │
+│     ├── Check file extension
+│     │
+│     ├── Match extension with predefined categories:
+│     │     ├── Images (.jpg, .png, .jpeg)
+│     │     ├── Documents (.pdf, .txt, .docx)
+│     │     ├── Music (.mp3, .wav)
+│     │     ├── Videos (.mp4, .mkv)
+│     │     └── Others (if no match)
+│     │
+│     ├── Create target folder if it does not exist
+│     │
+│     ├── Move file to the respective folder
+│     │
+│     └── Update count for summary report
+│
+├── After processing all files:
+│     ├── Display summary report
+│     │     ├── Number of images moved
+│     │     ├── Number of documents moved
+│     │     ├── Number of music files moved
+│     │     ├── Number of videos moved
+│     │     └── Number of other files moved
+│
+├── Show success message
+│
+└── END
