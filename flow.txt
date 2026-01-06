@@ -1,43 +1,53 @@
-START
+CONTINUATION OF PROGRAM FLOW
 │
-├── Program starts
+├── Ask user if they want to run in preview mode (Dry Run)
+│     ├── If YES:
+│     │     ├── Do not move files
+│     │     ├── Only display what actions would be taken
+│     │     └── Continue to summary report
+│     └── If NO:
+│           └── Proceed with actual file movement
 │
-├── Ask user to enter the folder path
+├── Ask user for confirmation before organizing
+│     ├── If user enters NO:
+│     │     └── Cancel operation and exit safely
+│     └── If user enters YES:
+│           └── Continue processing
 │
-├── Check if the folder exists
-│     ├── If NOT exists → show error and exit
-│     └── If exists → continue
+├── During file processing:
+│     ├── Ignore hidden files
+│     ├── Ignore unsupported or restricted file types
+│     ├── Prevent overwriting files with same name
+│     │     └── Rename file if conflict occurs
 │
-├── Read all items inside the folder
+├── Logging process:
+│     ├── For every file action:
+│     │     ├── Record original file name
+│     │     ├── Record destination folder
+│     │     └── Record timestamp
+│     └── Save details in log file (log.txt)
 │
-├── For each item in the folder:
-│     ├── Check if item is a file
-│     │     ├── If it is a folder → skip
-│     │     └── If it is a file → continue
-│     │
-│     ├── Check file extension
-│     │
-│     ├── Match extension with predefined categories:
-│     │     ├── Images (.jpg, .png, .jpeg)
-│     │     ├── Documents (.pdf, .txt, .docx)
-│     │     ├── Music (.mp3, .wav)
-│     │     ├── Videos (.mp4, .mkv)
-│     │     └── Others (if no match)
-│     │
-│     ├── Create target folder if it does not exist
-│     │
-│     ├── Move file to the respective folder
-│     │
-│     └── Update count for summary report
+├── Error handling:
+│     ├── If file cannot be moved:
+│     │     ├── Show warning message
+│     │     └── Continue with next file
+│     ├── If permission error occurs:
+│     │     └── Skip file safely
 │
-├── After processing all files:
-│     ├── Display summary report
-│     │     ├── Number of images moved
-│     │     ├── Number of documents moved
-│     │     ├── Number of music files moved
-│     │     ├── Number of videos moved
-│     │     └── Number of other files moved
+├── Undo support (optional future feature):
+│     ├── Store original file locations
+│     ├── Allow user to restore files to original state
 │
-├── Show success message
+├── Final summary display:
+│     ├── Total files scanned
+│     ├── Total files moved
+│     ├── Files skipped
+│     ├── Errors encountered
 │
-└── END
+├── Ask user:
+│     ├── "Do you want to organize another folder?"
+│     │     ├── YES → Restart program flow
+│     │     └── NO → Exit program
+│
+└── END PROGRAM
+
