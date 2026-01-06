@@ -28,3 +28,17 @@ This project is part of my journey to rebuild consistency and strengthen my core
 4. Run the script:
    ```bash
    python organizer.py
+
+EXAMPLE FLOW 
+
+Enter folder path to organize: E:\Downloads
+Run in preview mode? (y/n): y
+Proceed with organizing? (y/n): y
+
+[PREVIEW] photo.jpg → Images/
+[PREVIEW] song.mp3 → Music/
+
+📊 Summary Report
+Total files scanned: 2
+Images: 1 files
+Music: 1 files
